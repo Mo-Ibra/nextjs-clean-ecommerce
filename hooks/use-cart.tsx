@@ -23,8 +23,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Load cart from localStorage on mount
   useEffect(() => {
+    // Try to load the cart from localStorage
     const cart = localStorage.getItem("cart");
     if (cart) {
+      // If the cart is found, parse it and set it to the state
       setItems(JSON.parse(cart));
     }
   }, []);
@@ -32,8 +34,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // Save cart to localStorage when it changes
   useEffect(() => {
     try {
+      // Save the current cart to localStorage
       localStorage.setItem("cart", JSON.stringify(items));
     } catch (error) {
+      // If there's an error, log it to the console
       console.error("Failed to save cart to localStorage:", error);
     }
   }, [items]);
@@ -77,16 +81,47 @@ export function CartProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <CartContext value={{ items, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider
+      value={{
+        /**
+         * The list of products in the cart.
+         */
+        items,
+        /**
+         * Adds a product to the cart.
+         *
+         * @param product - The product to add to the cart.
+         */
+        addToCart,
+        /**
+         * Removes a product from the cart by its ID.
+         *
+         * @param productId - The ID of the product to remove.
+         */
+        removeFromCart,
+        /**
+         * Removes all products from the cart.
+         */
+        clearCart,
+      }}
+    >
       {children}
-    </CartContext>
+    </CartContext.Provider>
   );
 }
 
+/**
+ * Hook to access the cart context.
+ *
+ * @returns The cart context.
+ */
 export function useCart() {
   const context = useContext(CartContext);
   if (context === undefined) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error(
+      "useCart must be used within a CartProvider. " +
+        "Make sure you have wrapped your app with the CartProvider component."
+    );
   }
   return context;
 }
