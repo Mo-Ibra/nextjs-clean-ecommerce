@@ -11,14 +11,13 @@ import Link from "next/link";
 import { ScrollArea } from "./ui/scroll-area";
 import Image from "next/image";
 import { Separator } from "./ui/separator";
+import { useCart } from "@/hooks/use-cart";
 
 export default function CartSheet() {
-  // const { items, removeFromCart, clearCart } = useCart();
+  const { items, removeFromCart, clearCart } = useCart();
 
-  // const totalItems = items.length;
-  // const subtotal = items.reduce((total, item) => total + item.price, 0);
-
-  const totalItems = 1;
+  const totalItems = items.length;
+  const subtotal = items.reduce((total, item) => total + item.price, 0);
 
   return (
     <Sheet>
@@ -55,66 +54,28 @@ export default function CartSheet() {
           <>
             <ScrollArea className="h-[65vh]">
               <div className="space-y-4 px-8">
-                <div className="flex items-center space-x-4">
-                  <div className="relative h-16 w-16 overflow-hidden rounded">
-                    <Image
-                      src={"/placeholder.svg"}
-                      alt="Item Name"
-                      fill
-                      className="object-cover"
-                    />
+                {items.map((item) => (
+                  <div className="flex items-center space-x-4">
+                    <div className="relative h-16 w-16 overflow-hidden rounded">
+                      <Image
+                        src={"/placeholder.svg"}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="flex-1 space-y-1">
+                      <h4 className="font-medium">{item.name}</h4>
+                      <p className="text-sm text-muted-foreground">
+                        {item.price}
+                      </p>
+                    </div>
+                    <Button onClick={() => removeFromCart(item.id)} variant="ghost" size="icon">
+                      <X className="h-4 w-4" />
+                      <span className="sr-only">Remove</span>
+                    </Button>
                   </div>
-                  <div className="flex-1 space-y-1">
-                    <h4 className="font-medium">"Item Name"</h4>
-                    <p className="text-sm text-muted-foreground">
-                      "Item Price"
-                    </p>
-                  </div>
-                  <Button variant="ghost" size="icon">
-                    <X className="h-4 w-4" />
-                    <span className="sr-only">Remove</span>
-                  </Button>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="relative h-16 w-16 overflow-hidden rounded">
-                    <Image
-                      src={"/placeholder.svg"}
-                      alt="Item Name"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 space-y-1">
-                    <h4 className="font-medium">"Item Name"</h4>
-                    <p className="text-sm text-muted-foreground">
-                      "Item Price"
-                    </p>
-                  </div>
-                  <Button variant="ghost" size="icon">
-                    <X className="h-4 w-4" />
-                    <span className="sr-only">Remove</span>
-                  </Button>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="relative h-16 w-16 overflow-hidden rounded">
-                    <Image
-                      src={"/placeholder.svg"}
-                      alt="Item Name"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 space-y-1">
-                    <h4 className="font-medium">"Item Name"</h4>
-                    <p className="text-sm text-muted-foreground">
-                      "Item Price"
-                    </p>
-                  </div>
-                  <Button variant="ghost" size="icon">
-                    <X className="h-4 w-4" />
-                    <span className="sr-only">Remove</span>
-                  </Button>
-                </div>
+                ))}
               </div>
             </ScrollArea>
 
