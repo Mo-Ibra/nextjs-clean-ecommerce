@@ -6,6 +6,7 @@ import { Search, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import CartSheet from "./cart-sheet";
 
 /**
  * @description The main navigation component.
@@ -82,6 +83,10 @@ export default function Navbar() {
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => router.push('/search')} >
             <Search className="w-5 h-5" />
           </Button>
+
+          {/* Sheet */}
+
+          <CartSheet />
 
         </div>
       </div>
