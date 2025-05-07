@@ -13,6 +13,23 @@ import Image from "next/image";
 import { Separator } from "./ui/separator";
 import { useCart } from "@/hooks/use-cart";
 
+/**
+ * The `CartSheet` component is a sheet that can be opened with a trigger button
+ * and contains a list of items in the cart. It also displays the subtotal of
+ * the items and provides a link to checkout.
+ *
+ * When the cart is empty, it displays a message and a button to continue shopping.
+ *
+ * When the cart is not empty, it displays a list of items with their names,
+ * prices and a button to remove them from the cart. It also displays the subtotal
+ * of the items and provides a link to checkout.
+ *
+ * The `CartSheet` component is connected to the `useCart` hook, which provides
+ * the items in the cart and functions to remove items and clear the cart.
+ *
+ * The `CartSheet` component is a higher-order component, which means it wraps
+ * the provided `children` with a `Sheet` component.
+ */
 export default function CartSheet() {
   const { items, removeFromCart, clearCart } = useCart();
 
@@ -84,7 +101,7 @@ export default function CartSheet() {
             <div className="space-y-4 mt-4 px-8">
               <div className="flex items-center justify-between">
                 <span className="font-medium">Subtotal</span>
-                <span className="font-medium">140</span>
+                <span className="font-medium">{Math.round(subtotal * 100) / 100}</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Shipping and taxes calculated at checkout.

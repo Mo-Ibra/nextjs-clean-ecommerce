@@ -9,6 +9,11 @@ interface Params {
   id: string;
 }
 
+/**
+ * The product page component
+ * @param {Params} params The route params
+ * @returns {JSX.Element} The component
+ */
 export default async function SingleProductPage({
   params,
 }: {
@@ -18,15 +23,19 @@ export default async function SingleProductPage({
 
   const product = getProductById(id);
 
+  // If there is no product with the given id, return a 404
   if (!product) return notFound();
 
   return (
     <>
+      {/* The navbar component */}
       <Navbar />
+
+      {/* The main content */}
       <div className="bg-gray-100 min-h-screen py-12">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            
+            {/* The product image */}
             <div className="relative aspect-square w-full">
               <Image
                 src={product.image || "/placeholder/400x400.svg"}
@@ -36,16 +45,22 @@ export default async function SingleProductPage({
               />
             </div>
 
+            {/* The product details */}
             <div className="flex flex-col space-y-4 justify-center">
+              {/* The product name */}
               <h1 className="text-3xl font-bold text-gray-800">
                 {product.name}
               </h1>
+
+              {/* The product category */}
               <p className="text-sm text-gray-500">{product.category}</p>
+
+              {/* The product price */}
               <p className="text-xl text-gray-800 font-semibold">
                 ${product.price.toFixed(2)}
               </p>
 
-              
+              {/* The product description */}
               <div>
                 <h3 className="text-lg font-medium text-gray-800">
                   Description
@@ -53,12 +68,14 @@ export default async function SingleProductPage({
                 <p className="text-gray-600 mt-2">{product.description}</p>
               </div>
 
+              {/* The add to cart button */}
               <AddToCartButton product={product} />
             </div>
-
           </div>
         </div>
       </div>
+
+      {/* The footer component */}
       <Footer />
     </>
   );
