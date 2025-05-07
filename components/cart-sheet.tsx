@@ -58,7 +58,7 @@ export default function CartSheet() {
                   <div className="flex items-center space-x-4">
                     <div className="relative h-16 w-16 overflow-hidden rounded">
                       <Image
-                        src={"/placeholder.svg"}
+                        src={item.image}
                         alt={item.name}
                         fill
                         className="object-cover"

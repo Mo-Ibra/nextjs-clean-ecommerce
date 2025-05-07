@@ -6,7 +6,7 @@ const products: Product[] = [
     name: "Minimal Desk Lamp",
     description: "A sleek, adjustable desk lamp with minimalist design.",
     price: 49.99,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder/400x400.svg",
     category: "Home Decor",
   },
   {
@@ -14,7 +14,7 @@ const products: Product[] = [
     name: "Ergonomic Office Chair",
     description: "Comfortable office chair with lumbar support and adjustable height.",
     price: 199.99,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder/400x400.svg",
     category: "Furniture",
   },
   {
@@ -22,7 +22,7 @@ const products: Product[] = [
     name: "Wireless Earbuds",
     description: "Premium wireless earbuds with noise cancellation.",
     price: 129.99,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder/400x400.svg",
     category: "Electronics",
   },
   {
@@ -30,7 +30,7 @@ const products: Product[] = [
     name: "Ceramic Coffee Mug",
     description: "Handcrafted ceramic mug with minimalist design.",
     price: 24.99,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder/400x400.svg",
     category: "Kitchen",
   },
   {
@@ -38,7 +38,7 @@ const products: Product[] = [
     name: "Leather Wallet",
     description: "Genuine leather wallet with multiple card slots.",
     price: 59.99,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder/400x400.svg",
     category: "Accessories",
   },
   {
@@ -46,7 +46,7 @@ const products: Product[] = [
     name: "Smart Watch",
     description: "Feature-rich smartwatch with health tracking capabilities.",
     price: 249.99,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder/400x400.svg",
     category: "Electronics",
   },
   {
@@ -54,7 +54,7 @@ const products: Product[] = [
     name: "Cotton T-Shirt",
     description: "Premium cotton t-shirt with a comfortable fit.",
     price: 29.99,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder/400x400.svg",
     category: "Clothing",
   },
   {
@@ -62,7 +62,7 @@ const products: Product[] = [
     name: "Bluetooth Speaker",
     description: "Portable bluetooth speaker with rich sound quality.",
     price: 79.99,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/placeholder/400x400.svg",
     category: "Electronics",
   },
 ]
@@ -72,37 +72,37 @@ const categories: Category[] = [
     id: "1",
     name: "Electronics",
     slug: "electronics",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder/300x300.svg",
   },
   {
     id: "2",
     name: "Clothing",
     slug: "clothing",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder/300x300.svg",
   },
   {
     id: "3",
     name: "Home Decor",
     slug: "home-decor",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder/300x300.svg",
   },
   {
     id: "4",
     name: "Furniture",
     slug: "furniture",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder/300x300.svg",
   },
   {
     id: "5",
     name: "Kitchen",
     slug: "kitchen",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder/300x300.svg",
   },
   {
     id: "6",
     name: "Accessories",
     slug: "accessories",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/placeholder/300x300.svg",
   },
 ]
 
