@@ -1,19 +1,19 @@
 "use client";
 
+import Categories from "@/components/categories";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
-import { useCart } from "@/hooks/use-cart";
+import NewsLetter from "@/components/news-letter";
 
 function Home() {
-
-  const { items, addToCart } = useCart();
-
   return (
     <>
       <Navbar />
-      {/* <HeroSection /> */}
-      {/* <Footer /> */}
+      <HeroSection />
+      <Categories />
+      <NewsLetter />
+      <Footer />
     </>
   );
 }

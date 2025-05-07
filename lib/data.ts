@@ -1,4 +1,4 @@
-import { Product } from "./types";
+import { Product, Category } from "./types";
 
 const products: Product[] = [
   {
@@ -67,6 +67,45 @@ const products: Product[] = [
   },
 ]
 
+const categories: Category[] = [
+  {
+    id: "1",
+    name: "Electronics",
+    slug: "electronics",
+    image: "/placeholder.svg?height=300&width=300",
+  },
+  {
+    id: "2",
+    name: "Clothing",
+    slug: "clothing",
+    image: "/placeholder.svg?height=300&width=300",
+  },
+  {
+    id: "3",
+    name: "Home Decor",
+    slug: "home-decor",
+    image: "/placeholder.svg?height=300&width=300",
+  },
+  {
+    id: "4",
+    name: "Furniture",
+    slug: "furniture",
+    image: "/placeholder.svg?height=300&width=300",
+  },
+  {
+    id: "5",
+    name: "Kitchen",
+    slug: "kitchen",
+    image: "/placeholder.svg?height=300&width=300",
+  },
+  {
+    id: "6",
+    name: "Accessories",
+    slug: "accessories",
+    image: "/placeholder.svg?height=300&width=300",
+  },
+]
+
 /**
  * Retrieves all products.
  * @returns {Product[]} An array of all product objects.
@@ -93,4 +132,13 @@ export function getFeaturedProducts(): Product[] {
 export function getProductById(id: string): Product | undefined {
   // Find and return the product with the matching id
   return products.find((product) => product.id === id);
+}
+
+/**
+ * Retrieves all categories.
+ * @returns {Category[]} An array of all category objects.
+ */
+export function getAllCategories(): Category[] {
+  // Return the list of all categories
+  return categories;
 }
