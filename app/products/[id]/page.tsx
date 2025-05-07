@@ -1,78 +1,65 @@
-"use client";
-
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
-import { Button } from "@/components/ui/button";
-import { useCart } from "@/hooks/use-cart";
 import { getProductById } from "@/lib/data";
-import { ShoppingCart } from "lucide-react";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { useEffect, useState } from "react";
+import AddToCartButton from "@/components/add-to-cart-button";
 
-interface ProductPageProps {
-  params: {
-    id: string;
-  };
+interface Params {
+  id: string;
 }
 
-function SingleProductPage({ params }: ProductPageProps) {
-  const { addToCart } = useCart();
-  const { id } = params;
+export default async function SingleProductPage({
+  params,
+}: {
+  params: Params;
+}) {
+  const { id } = await params;
 
-  const [product, setProduct] = useState<any>(null);
+  const product = getProductById(id);
 
-  useEffect(() => {
-    async function fetchProduct() {
-      const prod = await getProductById(id);
-      if (!prod) return notFound();
-      setProduct(prod);
-    }
-    fetchProduct();
-  }, [id]);
-
-  if (!product) return <p>Loading...</p>;
+  if (!product) return notFound();
 
   return (
     <>
       <Navbar />
-      <section className="w-full py-12">
-        <div className="container mx-auto md:py-6 md:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="relative aspect-square">
+      <div className="bg-gray-100 min-h-screen py-12">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <div className="relative aspect-square w-full">
               <Image
-                src={product.image || "/placeholder.svg"}
+                src={product.image || "/placeholder/400x400.svg"}
                 alt={product.name}
-                fill
-                className="object-cover rounded-md"
+                layout="fill"
+                className="object-cover rounded-lg shadow-lg"
               />
             </div>
 
-            <div className="flex flex-col">
-              <h1 className="text-3xl font-bold">{product.name}</h1>
-              <p className="text-sm text-gray-500 mt-2">{product.category}</p>
-              <div className="mt-4">
-                <p className="text-2xl font-bold">${product.price.toFixed(2)}</p>
+            <div className="flex flex-col space-y-4 justify-center">
+              <h1 className="text-3xl font-bold text-gray-800">
+                {product.name}
+              </h1>
+              <p className="text-sm text-gray-500">{product.category}</p>
+              <p className="text-xl text-gray-800 font-semibold">
+                ${product.price.toFixed(2)}
+              </p>
+
+              
+              <div>
+                <h3 className="text-lg font-medium text-gray-800">
+                  Description
+                </h3>
+                <p className="text-gray-600 mt-2">{product.description}</p>
               </div>
 
-              <div className="mt-6">
-                <h3 className="text-lg font-medium mb-2">Description</h3>
-                <p className="text-gray-600">{product.description}</p>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <Button className="w-full md:w-auto cursor-pointer" size="lg" onClick={() => addToCart(product)}>
-                  <ShoppingCart className="mr-2 h-5 w-5" />
-                  Add to Cart
-                </Button>
-              </div>
+              <AddToCartButton product={product} />
             </div>
+
           </div>
         </div>
-      </section>
+      </div>
       <Footer />
     </>
   );
 }
-
-export default SingleProductPage;
