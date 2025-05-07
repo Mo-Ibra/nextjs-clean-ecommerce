@@ -12,7 +12,8 @@ const products: Product[] = [
   {
     id: "2",
     name: "Ergonomic Office Chair",
-    description: "Comfortable office chair with lumbar support and adjustable height.",
+    description:
+      "Comfortable office chair with lumbar support and adjustable height.",
     price: 199.99,
     image: "/placeholder/400x400.svg",
     category: "Furniture",
@@ -65,7 +66,7 @@ const products: Product[] = [
     image: "/placeholder/400x400.svg",
     category: "Electronics",
   },
-]
+];
 
 const categories: Category[] = [
   {
@@ -104,7 +105,7 @@ const categories: Category[] = [
     slug: "accessories",
     image: "/placeholder/300x300.svg",
   },
-]
+];
 
 /**
  * Retrieves all products.
