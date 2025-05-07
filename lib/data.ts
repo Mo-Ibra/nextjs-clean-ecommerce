@@ -143,3 +143,12 @@ export function getAllCategories(): Category[] {
   // Return the list of all categories
   return categories;
 }
+
+export function getCategoryBySlug(slug: string): Category | undefined {
+  // Find and return the category with the matching slug
+  return categories.find((category) => category.slug === slug);
+}
+
+export function getProductsByCategory(categoryName: string): Product[] {
+  return products.filter((product) => product.category === categoryName)
+}

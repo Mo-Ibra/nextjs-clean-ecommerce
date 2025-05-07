@@ -55,7 +55,7 @@ export default function CartSheet() {
             <ScrollArea className="h-[65vh]">
               <div className="space-y-4 px-8">
                 {items.map((item) => (
-                  <div className="flex items-center space-x-4">
+                  <div key={item.id} className="flex items-center space-x-4">
                     <div className="relative h-16 w-16 overflow-hidden rounded">
                       <Image
                         src={item.image}
