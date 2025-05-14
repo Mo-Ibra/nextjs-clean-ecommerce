@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="container mx-auto md:py-6 md:px-8 flex h-16 items-center">
 
         {/* Mobile Navigation */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -76,7 +76,7 @@ export default function Navbar() {
         </Link>
 
         {/* Nav links */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
+        <nav className="hidden lg:flex items-center gap-6 text-sm">
           {routes.map((route) => (
             <Link
               key={route.href}
@@ -89,7 +89,7 @@ export default function Navbar() {
         </nav>
 
         {/* Search & Cart */}
-        <div className="flex items-center gap-4 ml-auto">
+        <div className="flex items-center gap-4 ml-auto px-4 md:px-0">
           <form onSubmit={handleSearch} className="hidden md:flex items-center">
             <div className="relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -114,7 +114,6 @@ export default function Navbar() {
           </Button>
 
           {/* Sheet */}
-
           <CartSheet />
         </div>
       </div>
