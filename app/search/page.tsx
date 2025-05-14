@@ -79,7 +79,7 @@ function Search() {
 
   const clearAllFilters = () => {
     setSelectedCategories([]);
-    setPriceRange([minPrice, maxPrice]);
+    setPriceRange([minPrice, maxPrice]); 
     setSearchQuery("");
   };
 

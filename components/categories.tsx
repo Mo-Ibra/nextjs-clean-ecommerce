@@ -11,9 +11,9 @@ function Categories() {
   const categories = getAllCategories();
 
   return (
-    <section className="w-full py-12 bg-gray-50">
+    <section className="w-full py-12">
       <div className="container mx-auto md:py-6 md:px-8">
-        <h2 className="text-2xl font-bold tracking-tight mb-6">
+        <h2 className="text-3xl font-bold mb-8">
           Shop by Category
         </h2>
         {/* Display the categories in a grid. */}
