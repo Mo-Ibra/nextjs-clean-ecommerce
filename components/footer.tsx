@@ -1,8 +1,18 @@
-const Footer = () => {
+
+/**
+ * Footer component.
+ *
+ * This component renders the footer of the application.
+ * 
+ * @returns {JSX.Element}
+ */
+function Footer() {
   return (
     <footer className="border-t py-6">
+      {/* Footer text */}
       <p className="text-center text-sm leading-loose text-muted-foreground">
-        © 2025 Store. All rights reserved.
+        {/* Copyright symbol */}
+        &copy; 2025 Store. All rights reserved.
       </p>
     </footer>
   );

@@ -25,6 +25,22 @@ interface FilterSidebarProps {
   onClearFilters: () => void;
 }
 
+/**
+ * The FilterSidebar component displays a list of categories and a price range
+ * filter. The component also has a "Clear All Filters" button and a "Price Range"
+ * toggle.
+ *
+ * @param categories - An array of categories to display.
+ * @param selectedCategories - An array of selected categories.
+ * @param priceRange - The currently selected price range.
+ * @param minPrice - The minimum price of the price range.
+ * @param maxPrice - The maximum price of the price range.
+ * @param onCategoryChange - A function to call when a category is checked or
+ * unchecked.
+ * @param onPriceChange - A function to call when the price range is changed.
+ * @param onClearFilters - A function to call when the "Clear All Filters" button
+ * is clicked.
+ */
 function FilterSidebar({
   categories,
   selectedCategories,
