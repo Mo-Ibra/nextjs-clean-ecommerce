@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 function NewsLetter() {
   return (
     <section className="w-full py-12 bg-gray-50">
-      <div className="container mx-auto md:py-6 md:px-8">
+      <div className="container mx-auto px-4 py-4 md:py-6 md:px-8">
         <div className="flex flex-col items-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold tracking-tight">

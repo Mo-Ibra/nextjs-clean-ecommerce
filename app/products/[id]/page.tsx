@@ -33,7 +33,7 @@ export default async function SingleProductPage({
 
       {/* The main content */}
       <div className="bg-gray-100 min-h-screen py-12">
-        <div className="container mx-auto px-6 md:px-12">
+        <div className="container mx-auto px-4 py-4 md:py-6 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* The product image */}
             <div className="relative aspect-square w-full">

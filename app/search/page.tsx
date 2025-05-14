@@ -79,7 +79,7 @@ function Search() {
 
   const clearAllFilters = () => {
     setSelectedCategories([]);
-    setPriceRange([minPrice, maxPrice]); 
+    setPriceRange([minPrice, maxPrice]);
     setSearchQuery("");
   };
 
@@ -91,7 +91,7 @@ function Search() {
     <>
       <Navbar />
       <div className="py-8">
-        <div className="container mx-auto md:py-6 md:px-8">
+        <div className="container mx-auto px-4 py-4 md:py-6 md:px-8">
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:gap-6">
             {/* Mobile Filter Button */}
             <div className="flex md:hidden justify-between items-center mb-4">
