@@ -2,9 +2,19 @@
 
 A clean, modern e-commerce website built with Next.js, Tailwind CSS, and shadcn/ui components. This project features a minimalist design focused on user experience and performance.
 
-## Screens:
+## 🎯 Screens
 
+### Cart:
 
+![Main Page With CART](preview/1.png)
+
+### Product Page With Cart:
+
+![Product Page](preview/2.png)
+
+### Search Page:
+
+![Search Page](preview/3.png)
 
 ## 🚀 Features
 
